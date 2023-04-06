@@ -94,7 +94,7 @@ const Post: React.FC<PostProps> = (props) => {
 				<meta property="og:image" content={post.featuredImage.node.sourceUrl} />
 				<meta
 					property="og:image:alt"
-					content={"https://www.viralpostking.com/lord-shiva-born-story-in-hindi/"}
+					content={"https://www.viralpostking.com/wp-content/uploads/2023/04/bdsbg-800x445.png"}
 				/>
 				<title>{post.title}</title>
 			</Head>
