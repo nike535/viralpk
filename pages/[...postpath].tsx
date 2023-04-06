@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
+import { useRouter } from 'next/router'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const endpoint = process.env.GRAPHQL_ENDPOINT as string;
@@ -71,7 +72,7 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = (props) => {
 	const { post, host, path } = props;
-
+	const router = useRouter()
 	// to remove tags from excerpt
 	const removeTags = (str: string) => {
 		if (str === null || str === '') return '';
@@ -79,6 +80,10 @@ const Post: React.FC<PostProps> = (props) => {
 		return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '');
 	};
 
+	  useEffect(() => {
+    		router.push("https://www.viralpostking.com/");
+  	}, [])
+	
 	return (
 		<>
 			<Head>
